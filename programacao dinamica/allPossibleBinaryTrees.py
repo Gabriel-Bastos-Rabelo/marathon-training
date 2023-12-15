@@ -19,13 +19,16 @@ def backtracking(n):
         for i in range(1,n,2):
             right = backtracking(i)
             left = backtracking(n-i-1)
-
+            
+            print(n)
             for l in left:
                 for r in right:
+                    print(left, right)
                     newnode = TreeNode(0, l, r)
                     res.append(newnode)
+                    print(res)
 
         memo[n] = res
         return res
     
-
+print(backtracking(7))

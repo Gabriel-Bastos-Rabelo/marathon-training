@@ -1,5 +1,5 @@
 #Solução recursiva, backtracking, não passa no tempo limite
-
+#maneiras de subir uma escada com N degraus, podendo subir 1 ou 2 degraus por vez
 ans = 0
 memo = {}
 def climbingStairs(n):
@@ -19,6 +19,6 @@ def climbingStairs(n):
     
 
 
-print(climbingStairs(3))
+print(climbingStairs(5))
 
 

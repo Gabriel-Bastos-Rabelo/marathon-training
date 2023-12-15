@@ -7,6 +7,7 @@ def minCostClimbingStairs(cost):
 
         for i in range(tamanhoLista):
             for j in range(i+1, i+3):
+                print(memo)
                 if j < tamanhoLista:
                     memo[j] = min(memo[j], memo[i] + cost[j])
                 else:

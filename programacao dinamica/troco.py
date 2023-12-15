@@ -31,7 +31,7 @@ print(troco(0, 0, moedas))"""
 
 
 
-resposta = 'N'
+"""resposta = 'N'
 def busca(coin, soma):
     global resposta
     
@@ -60,4 +60,59 @@ memo = {}
 
 busca(0, 0)
 print(resposta)
+"""
+
+#solução 4
+
+"""def solve(n, moedas, index):
+    if n < 0:
+        return 0
+    if n == 0:
+        return 1
+    if(memo[n] != -1):
+        return memo[n]
+    
+    for i in range(index, len(moedas)):
+        if(solve(n-moedas[i], moedas, i+1) == 1):
+            memo[n] = 1
+        
+    return memo[n] == 1
+
+
+valor, numeroMoedas = list(map(int, input().split()))
+moedas = list(map(int, input().split()))
+memo = [-1] * (valor+1)
+res = solve(valor, moedas, 0)
+if(res):
+    print("S")
+else:
+    print("N")
+
+"""
+#solução 5
+"""
+def solve(i, left):
+    if left == 0:
+        return 1
+    if left < 0:
+        return 0
+    if i >= numeroMoedas:
+        return 0
+    
+    if(resp[i][left] == -1):
+        resp[i][left] = solve(i+1, left-valores[i]) + solve(i+1, left)
+
+    return resp[i][left]
+    
+
+valor, numeroMoedas = list(map(int, input().split()))
+valores = list(map(int, input().split()))
+resp = [[-1] * (valor+1)] * (numeroMoedas)
+res = solve(0, valor)
+if(res == 1):
+    print("S")
+else:
+    print("N")
+
+"""
 
