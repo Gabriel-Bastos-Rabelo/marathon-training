@@ -37,6 +37,12 @@ Str = "Learn Competitive Programming with GFG!"
 print(f"Substring from index 6 to 16 = {Str[6:17]}")
 
 
+#check if starts with
+txt = "Hello, welcome to my world."
+x = txt.startswith("Hello")
+print(x)
+
+
 
 
 
