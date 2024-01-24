@@ -13,3 +13,4 @@ def insertionSort(x):
     return x
 
 #complexidade de tempo: O(n²) no pior caso
+#O(n) no melhor caso

@@ -16,5 +16,7 @@ def bubbleSort(x):
 
 
 #complexidade de tempo: O(n²)
+#O(n) no melhor caso
+
 
             
