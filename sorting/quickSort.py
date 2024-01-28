@@ -1,7 +1,7 @@
 def quickSort(array, low, high):
     if(low == high):
         return
-    pivot_location = partitionMiddleElement(array, low, high)
+    pivot_location = partitionFirstElement(array, low, high)
     quickSort(array, low, pivot_location)
     quickSort(array, pivot_location + 1, high)
 
@@ -14,9 +14,9 @@ def partitionFirstElement(array, low, high):
 
     for i in range(low + 1, high):
         if(array[i] < pivot):
-            array[i], array[leftWall] = array[leftWall], array[i]
             leftWall += 1
-
+            array[i], array[leftWall] = array[leftWall], array[i]
+     
     array[low], array[leftWall] = array[leftWall], array[low]
 
     return leftWall
@@ -52,9 +52,9 @@ def partitionMiddleElement(array, low, high):
 
 
 
-array = [5,4,3,2,1,10,9,8,30,34,12,-1,-100,40]
+array = [5,2,3,1]
 
-quickSort(array, 0, 14)
+quickSort(array, 0, len(array))
 
 print(array)
 
