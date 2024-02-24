@@ -16,7 +16,7 @@ def divisores_primos(n):
 
 
 
-print(divisores_primos(15))
+print(divisores_primos(30))
             
 
 
