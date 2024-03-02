@@ -1,21 +1,24 @@
 
-#leetcode 40
-res = []
-visitados = {}
+from collections import Counter
 
-def permutation(nums, lista, visitados):
-    if len(lista) == len(nums) and lista not in res:
-        res.append(lista.copy())
-        print(lista)
+class Solution:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        self.ans = []
+        self.visitados = {}
+        def backtracking(path, counter):
+            if len(path) == len(nums):
+                self.ans.append(path.copy())
+                return
+            else:
+                for i in counter:
+                    if counter[i] > 0:
+                        path.append(i)
+                        counter[i] -= 1
+                        backtracking(path, counter)
+                        path.pop()
+                        counter[i] += 1
+        
+        
 
-    for index, x in enumerate(nums):
-        if index not in visitados:
-            visitados[index] = 1
-            lista.append(x)
-            permutation(nums, lista, visitados)
-            visitados.pop(index)
-            lista.pop()
-
-
-nums = [1,3,2]
-permutation(nums, [], visitados)
+        backtracking([], Counter(nums))
+        return self.ans
