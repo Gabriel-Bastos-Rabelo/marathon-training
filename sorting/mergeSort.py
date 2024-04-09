@@ -11,12 +11,7 @@ def mergeSort(array):
     elif(len(array) == 1):
         return array
     
-    elif(len(array) == 2):
-        if l[0] > r[0]:
-            array[0], array[1] = array[1], array[0]
 
-        return array
-    
 
     mergeSort(l)
 
@@ -50,7 +45,7 @@ def mergeSort(array):
     return array
 
 
-print(mergeSort([38, 27, 43, 10]))
+print(mergeSort([38, 27, 43, 10, 11, 1, 4, 5, -3]))
 
 
 #complexidade de tempo O(nlogn)
