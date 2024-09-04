@@ -64,7 +64,7 @@ print(resposta)
 
 #solução 4
 
-"""def solve(n, moedas, index):
+def solve(n, moedas, index):
     if n < 0:
         return 0
     if n == 0:
@@ -88,7 +88,7 @@ if(res):
 else:
     print("N")
 
-"""
+
 #solução 5
 """
 def solve(i, left):

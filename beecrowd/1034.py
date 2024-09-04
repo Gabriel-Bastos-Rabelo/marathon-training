@@ -63,3 +63,24 @@ for i in range(n):
     dp = [-1] * (m + 1)
     lista = list(map(int, input().split()))
     print(min_blocksDP(lista, m, dp))
+
+
+def min_blockDP2(lista, m, dp):
+    
+    if m == 0:
+        return 0
+    
+    if dp[m] != -1:
+        return dp[m]
+
+    res = maxsize
+
+    for i in lista:
+        if i <= m:
+            sub_res = min_blockDP2(lista, m - i, dp)
+            if sub_res != maxsize and sub_res + 1 < res:
+                res = 1 + sub_res
+
+        dp[m] = res
+
+    return dp[m]
